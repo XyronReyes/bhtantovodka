@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Volley</title>
+<link rel="preload" as="image" href="https://images.weserv.nl/?url=i.ibb.co/rGzqnmQx/volley-02-10-2.jpg&amp;w=1600&amp;q=82&amp;output=webp">
+<style>
+  @font-face {
+    font-family: 'JackSans';
+    src: url('JackSans.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Visuelt';
+    src: url('Visuelt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Visuelt';
+    src: url('Visuelt Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --sky-top: #bfe3f2;
+    --sky-bottom: #eaf6fb;
+    --ink: #14181c;
+    --ink-soft: #4b5561;
+    --line: #d9e6ec;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--sky-bottom);
+    background-image: url('https://images.weserv.nl/?url=i.ibb.co/rGzqnmQx/volley-02-10-2.jpg&w=1600&q=82&output=webp');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Visuelt', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 56px 24px 64px;
+  }
+
+  .logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 40px;
+  }
+
+  .logo {
+    display: block;
+    width: 45%;
+    max-width: 340px;
+    height: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 48px 40px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(20, 24, 28, 0.15);
+  }
+
+  @media (max-width: 600px) {
+    body {
+      background-attachment: scroll;
+      background-image: url('https://images.weserv.nl/?url=i.ibb.co/rGzqnmQx/volley-02-10-2.jpg&w=800&q=80&output=webp');
+    }
+
+    .wrap {
+      padding: 36px 16px 40px;
+    }
+
+    .card {
+      padding: 32px 24px;
+      border-radius: 16px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+  }
+
+  .check {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: #3dae2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .check svg { width: 26px; height: 26px; }
+
+  h1 {
+    font-family: 'JackSans', 'Visuelt', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 34px;
+    line-height: 1.1;
+    margin: 0 0 12px;
+  }
+
+  .confirm {
+    font-family: 'JackSans', 'Visuelt', sans-serif;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--line);
+    margin: 0 0 32px;
+  }
+
+  p.body-copy {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 28px;
+    text-align: left;
+  }
+
+  .id-note {
+    font-size: 13px;
+    color: #d4d4d4;
+    background: #000000;
+    border-radius: 10px;
+    padding: 14px 18px;
+    text-align: left;
+    margin: 0 0 32px;
+  }
+
+  .tag-block {
+    margin: 0 0 32px;
+  }
+
+  .tag-block p {
+    font-size: 15px;
+    margin: 0 0 6px;
+    color: var(--ink-soft);
+  }
+
+  .tag-handle {
+    display: inline-block;
+    font-family: 'JackSans', 'Visuelt', sans-serif;
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 2px;
+  }
+
+  .cta {
+    display: inline-block;
+    background: #3dae2b;
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'JackSans', 'Visuelt', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    padding: 16px 36px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+  }
+
+  .support {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .support a {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo-wrap">
+      <img class="logo" src="https://i.ibb.co/G4ScLxrq/Volley-LOGO-BLACK.png" alt="Volley">
+    </div>
+
+    <div class="card">
+      <div class="check">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 12.5L9.5 18L20 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <h1>Thank You</h1>
+      <p class="confirm">Your Volley order is confirmed.</p>
+
+      <div class="divider"></div>
+
+      <p class="body-copy">Your clean tequila soda is on the way. Made with just three clean ingredients — premium blanco tequila, organic juice, and sparkling water — Volley is best served ice cold and enjoyed wherever the good times are headed.</p>
+
+      <div class="id-note">A 21+ adult with valid ID is required for pickup, delivery, or shipment.</div>
+
+      <div class="tag-block">
+        <p>Tag us when your Volley arrives</p>
+        <a class="tag-handle" href="https://instagram.com/drinkvolley" target="_blank" rel="noopener">@drinkvolley</a>
+      </div>
+
+      <a class="cta" href="https://drinkvolley.com/collections/all-products">Continue Shopping</a>
+
+      <p class="support">Need help with your order? <a href="mailto:Volley@wholesomespirits.com">Contact us</a> with your order number.</p>
+    </div>
+
+    <footer>© Wholesome Brands, Miami, FL</footer>
+  </div>
+</body>
+</html>
