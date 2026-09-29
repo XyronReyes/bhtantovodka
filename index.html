@@ -128,7 +128,7 @@
   .pdp{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:70px; padding:36px 32px 90px; max-width:1240px; margin:0 auto; }
 
   .gallery-stage{
-    position:relative; aspect-ratio:4/5; border-radius:20px; overflow:hidden;
+    position:relative; aspect-ratio:4/5; min-height:340px; border-radius:20px; overflow:hidden;
     background:var(--paper);
     border:1px solid var(--line);
     display:flex; align-items:center; justify-content:center;
@@ -150,8 +150,8 @@
     color:var(--ink-soft); display:flex; gap:6px; align-items:center; opacity:0; transition:opacity .3s;
   }
   .gallery-stage:hover .zoom-hint{ opacity:1; }
-  .bottle-scene{ position:relative; width:56%; height:80%; transition:transform .15s ease-out; will-change:transform; display:flex; align-items:center; justify-content:center; z-index:2;}
-  .bottle-scene img{ max-width:100%; max-height:100%; object-fit:contain; filter:drop-shadow(0 22px 26px rgba(33,24,24,0.28)); transition:opacity .2s; }
+  .bottle-scene{ position:relative; width:56%; height:80%; margin:0 auto; transition:transform .15s ease-out; will-change:transform; display:flex; align-items:center; justify-content:center; z-index:2;}
+  .bottle-scene img{ display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; filter:drop-shadow(0 22px 26px rgba(33,24,24,0.28)); transition:opacity .2s; }
 
   .thumbs-label{ display:flex; justify-content:space-between; align-items:baseline; margin-top:22px; margin-bottom:12px; }
   .thumbs-label .eyebrow{ font-size:11.5px; }
@@ -163,8 +163,8 @@
     display:flex; flex-direction:column; align-items:stretch;
     overflow:hidden; transition:border-color .2s, transform .2s;
   }
-  .thumb-stage{ aspect-ratio:1; display:flex; align-items:center; justify-content:center; position:relative; }
-  .thumb img{ max-width:62%; max-height:62%; object-fit:contain; filter:drop-shadow(0 6px 8px rgba(33,24,24,0.22)); }
+  .thumb-stage{ aspect-ratio:1; min-height:72px; width:100%; display:flex; align-items:center; justify-content:center; position:relative; }
+  .thumb img{ display:block; max-width:62%; max-height:62%; width:auto; height:auto; object-fit:contain; filter:drop-shadow(0 6px 8px rgba(33,24,24,0.22)); margin:0 auto; }
   /* Double Oaked gets a contrast/saturation lift so its label stars pop like they do on Blanco & Dark. Dark & Midnight now use the edited source photos as-is — no compensating filter (removed for render performance and since the new photos are already color-corrected). */
   .thumb[data-key="doubleoaked"] img{ filter:drop-shadow(0 6px 8px rgba(33,24,24,0.22)) saturate(1.12) contrast(1.08); }
   .thumb.active{ border-color:var(--brass); box-shadow:0 0 0 1px var(--brass); }
@@ -396,7 +396,7 @@
   .alsocard{ display:flex; align-items:center; gap:28px; background:var(--paper-2); border:1px solid var(--line); border-radius:18px; padding:24px 28px; transition:border-color .25s, transform .25s; }
   .alsocard:hover{ border-color:var(--brass); transform:translateY(-3px); }
   .alsocard .ac-img{ width:88px; height:130px; flex:none; display:flex; align-items:center; justify-content:center; }
-  .alsocard .ac-img img{ max-width:100%; max-height:100%; object-fit:contain; filter:drop-shadow(0 10px 14px rgba(33,24,24,0.22)); }
+  .alsocard .ac-img img{ display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; margin:0 auto; filter:drop-shadow(0 10px 14px rgba(33,24,24,0.22)); }
   .alsocard .ac-body{ flex:1; }
   .alsocard .ac-cat{ font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ox); font-weight:800; margin-bottom:6px; }
   .alsocard h3{ font-size:19px; margin-bottom:6px; }
@@ -406,8 +406,8 @@
   .lineup-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
   .linecard{ background:var(--paper-2); border:1px solid var(--line); border-radius:18px; padding:26px; transition:transform .3s, border-color .3s; position:relative; overflow:hidden; cursor:pointer; }
   .linecard:hover{ transform:translateY(-6px); border-color:var(--brass); }
-  .linecard .lc-bottle{ height:150px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
-  .linecard .lc-bottle img{ max-height:100%; max-width:80%; object-fit:contain; filter:drop-shadow(0 14px 16px rgba(33,24,24,0.25)); }
+  .linecard .lc-bottle{ height:150px; width:100%; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+  .linecard .lc-bottle img{ display:block; max-height:100%; max-width:80%; width:auto; height:auto; object-fit:contain; margin:0 auto; filter:drop-shadow(0 14px 16px rgba(33,24,24,0.25)); }
   .linecard[data-key="doubleoaked"] .lc-bottle img{ filter:drop-shadow(0 14px 16px rgba(33,24,24,0.25)) saturate(1.12) contrast(1.08); }
   .linecard h3{ font-size:18px; margin-bottom:6px; }
   .linecard .lc-spec{ font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--brass-dark); margin-bottom:10px; font-weight:700; }
@@ -542,9 +542,13 @@
         <div class="thumb-stage"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2F5xWP6dXL%2FTanto-Vodka-Hero-TP.webp&w=1000&q=80&output=webp" alt="Tanto Vodka" loading="lazy" decoding="async"></div>
         <span class="cap">Tanto Vodka</span>
       </div>
-      <div class="thumb" data-key="sonny76th">
-        <div class="thumb-stage"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2FVcfPcdf9%2FSonny-76th-Hero-TP.webp&w=1000&q=80&output=webp" alt="Sonny 76th" loading="lazy" decoding="async"></div>
-        <span class="cap">Sonny 76th</span>
+      <div class="thumb" data-key="galletoo">
+        <div class="thumb-stage"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2FYF9WY8Z8%2FGalletoo-Hero-TP.webp&w=1000&q=80&output=webp" alt="Galletoo" loading="lazy" decoding="async"></div>
+        <span class="cap">Galletoo</span>
+      </div>
+      <div class="thumb" data-key="lebowskis">
+        <div class="thumb-stage"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2F7x7g2rVp%2FLebowski-Kool-Luah-Hero-TP.webp&w=1000&q=80&output=webp" alt="Lebowski's Kool Coffee Liqueur" loading="lazy" decoding="async"></div>
+        <span class="cap">Lebowski's Kool Coffee Liqueur</span>
       </div>
     </div>
     <p style="font-size:11px;color:var(--ink-soft);margin-top:12px;">Product photography supplied by Blackhat Distillery. Click any bottle above &mdash; the whole page updates to that product, showing how one template drives the full catalog.</p>
@@ -642,7 +646,7 @@
         <span>Crafted in Small<br>Disciplined Batches</span>
       </div>
       <div class="trust">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="17" rx="8.5" ry="2"/><path d="M8.3 16.6c-1-4.2.6-10.1 3.9-10.1s4.9 5.9 3.9 10.1"/><path d="M8.6 13.6h6.9"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="18.3" rx="9" ry="1.6"/><path d="M7.3 18 V7 H16.7 V18"/><path d="M7.3 15 H16.7"/></svg>
         <span>Private Label</span>
       </div>
     </div>
@@ -813,9 +817,9 @@
   <div class="story-in">
     <div>
       <span class="eyebrow on-dark">Beyond the Blackhat Label</span>
-      <h2>Veteran-Founded, Same Standards</h2>
-      <p>Tanto Vodka isn't distilled at Blackhat's facility — it's a private-label partnership, produced and bottled by Blackhat Distillery under founders Ben Morgan and Kris "Tanto" Paronto's own brand.</p>
-      <p>Both are former members of the elite 75th Ranger Regiment, and 50% of all Tanto profits support veterans and first responders — a smaller part of the catalog, but one that runs through the same Blackhat quality standards.</p>
+      <h2>The Private Label Program</h2>
+      <p>Blackhat produces and bottles spirits for partners building brands of their own, including Lebowski's Kool Coffee Liqueur, Galletoo Coffee Liqueur, and Tanto Vodka, founded by veterans Ben Morgan and Kris "Tanto" Paronto.</p>
+      <p>Every private label is made in our Colorado Springs distillery to the same standards as our own lineup. We handle development, production and label approvals, so partners can focus on building their brand. If you have an idea for a spirit of your own, we'd like to hear it.</p>
       <div class="sig">&mdash; Blackhat Distillery, on the Private Label line</div>
     </div>
     <div class="story-photos">
@@ -872,7 +876,7 @@
       <div class="foot-col">
         <span>Shop</span>
         <a href="blackhat-all-spirits-landing.html">All Spirits</a>
-        <a href="blackhat-all-spirits-landing.html">Private Label</a>
+        <a href="#lineup">Private Label</a>
         <a href="#">Where to Buy</a>
       </div>
       <div class="foot-col">
@@ -903,8 +907,8 @@
     <li>Product photos, pricing, SKUs, UPCs, star ratings, and sample reviews on this page are still <b>draft placeholder content</b> &mdash; not yet reviewed against a real product spreadsheet, photography set, or review data. Everything else (tasting notes, ABV/proof, descriptions, craft copy, quotes, serve tabs) has been updated from your edit notes.</li>
     <li>No competition entries are shown for any product on this page &mdash; we didn't want to invent awards. Add real results here once available.</li>
     <li>This page reuses your existing catalog product photos and follows the exact same layout, tabs, and interaction pattern as the Duelers PDP &mdash; built to show how one template can drive the full 24-page catalog rollout.</li>
-    <li>Built as a single-product page (no line switcher) since Tanto Vodka has no sibling expressions in the catalog — matches the pattern used for the standalone Blackhat Whiskey page.</li>
     <li>Per your notes, Tanto is not distilled at Blackhat's facility — it's produced and bottled by Blackhat under its own private-label brand. All "distilled"/"charcoal filtered" claims about Tanto specifically have been removed or corrected throughout this page.</li>
+    <li>Sonny 76th has been removed from this page per your latest revision notes, since it's not part of the ecommerce platform. Galletoo and Lebowski's now also appear here as part of the Private Label line, cross-linked from the Liqueurs and Specialties page, so this is a line switcher page rather than a single-product page.</li>
   </ul>
 </div>
 <div class="concept-badge" id="conceptBadge">
@@ -915,7 +919,7 @@
 <script>
 const MEDAL_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#93691f" stroke-width="1.6"><circle cx="12" cy="9" r="6"/><path d="M8 14.5 6 21l6-3 6 3-2-6.5"/></svg>';
   const LEAF_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#7eaa8b" stroke-width="1.3"><ellipse cx="12" cy="20.5" rx="4.5" ry="1.4"/><path d="M12 20.5 C11 14 11 7 12 3 C13 7 13 14 12 20.5 Z"/><path d="M12 20.5 C13.2 15 15.5 9.5 18.5 5.5 C16.3 10.3 14.3 16 12 20.5 Z"/><path d="M12 20.5 C10.8 15 8.5 9.5 5.5 5.5 C7.7 10.3 9.7 16 12 20.5 Z"/><path d="M12 20.5 C13.8 16.2 17 12.5 20.5 10 C17.8 14 14.8 18 12 20.5 Z"/><path d="M12 20.5 C10.2 16.2 7 12.5 3.5 10 C6.2 14 9.2 18 12 20.5 Z"/></svg>';
-  const HAT_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#4a3f35" stroke-width="1.3"><ellipse cx="12" cy="17" rx="8.5" ry="2"/><path d="M8.3 16.6c-1-4.2.6-10.1 3.9-10.1s4.9 5.9 3.9 10.1"/><path d="M8.6 13.6h6.9"/></svg>';
+  const HAT_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#4a3f35" stroke-width="1.3"><ellipse cx="12" cy="18.3" rx="9" ry="1.6"/><path d="M7.3 18 V7 H16.7 V18"/><path d="M7.3 15 H16.7"/></svg>';
   const MEDAL_SVG_LG = '<svg class="medal" viewBox="0 0 24 24" fill="none" stroke="#93691f" stroke-width="1.3"><circle cx="12" cy="9" r="6.5"/><path d="M7.5 15 5.5 22l6.5-3.4 6.5 3.4-2-7"/></svg>';
 
   
@@ -949,31 +953,62 @@ const MEDAL_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#93691f" stroke-
         noteText:"This is an easy choice for your everyday vodka, especially when every bottle sold helps veterans and first responders."
       }
     },
-    sonny76th: {
-      name:"Sonny 76th",
-      category:"Pending",
-      badge:"Sonny 76th \u00b7 New \u2014 Details Pending",
-      img:"https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2FVcfPcdf9%2FSonny-76th-Hero-TP.webp&w=1000&q=80&output=webp",
-      abv:"TBD", proof:"TBD", specLabel:"Spec", specValue:"TBD",
-      price:"TBD", sku:"TBD", upc:"TBD",
-      flavorNotes:[],
-      desc:"<b>Product details pending.</b> This photo was added based on its filename and album placement \u2014 please confirm the product name, description, and specs with Blackhat Distillery.",
-      lineupDesc:"Product details pending confirmation.",
+    galletoo: {
+      name:"Galletoo",
+      category:"Coffee Liqueur",
+      badge:"Galletoo \u00b7 Specialty",
+      img:"https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2FYF9WY8Z8%2FGalletoo-Hero-TP.webp&w=1000&q=80&output=webp",
+      abv:"32%", proof:"64", specLabel:"Style", specValue:"Coffee Liqueur",
+      price:"$27.99", sku:"BHTR-GT", upc:"TBD",
+      flavorNotes:["African Coffee","Baking Chocolate","Dark Fruit","Vanilla"],
+      desc:"<b>Silky and full-bodied</b>, a high-end coffee liqueur made with real African coffee beans, with proceeds going to benefit the LALMBA organization.",
+      lineupDesc:"A luxury liqueur with flavors that evoke a traditional Ethiopian coffee ceremony, and a long-lasting dark roasted finish that melds with Madagascar vanilla.",
+      awards:[{tier:"Gold Medal", comp:"San Diego Spirits Festival"}],
+      notes:[
+        {num:"01 \u2014 NOSE", title:"Dark Roast African Coffee", text:"Dark roast African coffee."},
+        {num:"02 \u2014 PALATE", title:"Baking Chocolate & Dark Fruit", text:"Baking chocolate, dark fruit, and bright acidity."},
+        {num:"03 \u2014 FINISH", title:"Smooth Vanilla & Coffee", text:"Smooth vanilla with lingering coffee richness."}
+      ],
+      craftNote:"Galletoo is a luxury liqueur with flavors that evoke a traditional Ethiopian coffee ceremony, and a long-lasting dark roasted finish that melds with Madagascar vanilla.",
+      factOakTitle:"Coffee Liqueur", factOakDesc:"Made with real African coffee beans, with proceeds supporting the LALMBA organization.",
+      fact1Title:"Private Label Partnership", fact1Desc:"Produced and bottled by Blackhat Distillery under a private label brand.",
+      serve:{
+        neatTitle:"Neat or Over Ice",
+        neatText:"Perfect neat or over ice to enjoy the rich coffee flavors.",
+        recipeTitle:"Suggested Serve: Blackhat Espresso Martini",
+        recipeIntro:"A rich, coffee-forward riff on the classic.",
+        recipeItems:["1.5 oz Duelers Midnight","1 oz Galletoo Coffee Liqueur","2 oz espresso","0.5 oz agave nectar","4-5 dashes orange bitters"],
+        noteTitle:"The Star of the Show",
+        noteText:"Whether you mix it into a cocktail or enjoy it on its own, Galletoo is the star of the show."
+      }
+    },
+    lebowskis: {
+      name:"Lebowski's Kool Coffee Liqueur",
+      category:"Coffee Liqueur",
+      badge:"Lebowski's \u00b7 Specialty",
+      img:"https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2F7x7g2rVp%2FLebowski-Kool-Luah-Hero-TP.webp&w=1000&q=80&output=webp",
+      abv:"20%", proof:"40", specLabel:"Style", specValue:"Coffee Liqueur",
+      price:"$24.99", sku:"BHTR-LK", upc:"TBD",
+      flavorNotes:["Vanilla","Colombian Coffee","Velvety","Smooth"],
+      desc:"<b>Made with premium vodka and the finest Colombian coffee</b>, it delivers a smooth, rich profile with hints of sweetness and a velvety finish.",
+      lineupDesc:"Experience the luxurious allure of Lebowski's Kool Coffee Liqueur, a craft coffee liqueur that blends sophistication with bold flavor.",
       awards:[],
       notes:[
-
+        {num:"01 \u2014 NOSE", title:"Vanilla & Coffee", text:"Vanilla and coffee."},
+        {num:"02 \u2014 PALATE", title:"Colombian Coffee & Vanilla", text:"Colombian coffee richness with a rich sweet vanilla."},
+        {num:"03 \u2014 FINISH", title:"Velvety & Smooth", text:"Velvety and smooth."}
       ],
-      craftNote:"",
-      factOakTitle:"", factOakDesc:"",
-      fact1Title:"Pending", fact1Desc:"Product details pending confirmation.",
+      craftNote:"Made with premium vodka and the finest Colombian coffee for a smooth, rich, velvety profile.",
+      factOakTitle:"Coffee Liqueur", factOakDesc:"Made with premium vodka and the finest Colombian coffee.",
+      fact1Title:"Private Label Partnership", fact1Desc:"Produced and bottled by Blackhat Distillery under a private label brand.",
       serve:{
-        neatTitle:"Pending",
-        neatText:"Serving suggestions pending confirmation.",
-        recipeTitle:"Pending",
-        recipeIntro:"Suggested serve pending confirmation.",
-        recipeItems:[],
-        noteTitle:"Pending",
-        noteText:"Awaiting product details from Blackhat Distillery."
+        neatTitle:"Over Ice or in Coffee",
+        neatText:"Great over ice, or added to hot coffee for an easy after-dinner drink.",
+        recipeTitle:"Suggested Serve: Lebowski's White Russian",
+        recipeIntro:"The classic use case for a coffee liqueur.",
+        recipeItems:["2 oz Blackhat Vodka","1 oz Lebowski's Kool Coffee Liqueur","1 oz heavy cream"],
+        noteTitle:"Built to Mix",
+        noteText:"Built to mix; this should be your go-to liqueur for all your favorite coffee cocktails."
       }
     }
   };
@@ -1053,12 +1088,13 @@ function renderAwardRow(container, awards, size, useAgave){
   }
 
   
-  const ORDER = ["tanto","sonny76th"];
+  const ORDER = ["tanto","galletoo","lebowskis"];
   let current = "tanto";
 
   const TONE_FILTER = {
     tanto: '',
-    sonny76th: ''
+    galletoo: '',
+    lebowskis: ''
   };
 
   function switchProduct(key){
