@@ -542,14 +542,6 @@
         <div class="thumb-stage"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2F5xWP6dXL%2FTanto-Vodka-Hero-TP.webp&w=1000&q=80&output=webp" alt="Tanto Vodka" loading="lazy" decoding="async"></div>
         <span class="cap">Tanto Vodka</span>
       </div>
-      <div class="thumb" data-key="galletoo">
-        <div class="thumb-stage"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2FYF9WY8Z8%2FGalletoo-Hero-TP.webp&w=1000&q=80&output=webp" alt="Galletoo" loading="lazy" decoding="async"></div>
-        <span class="cap">Galletoo</span>
-      </div>
-      <div class="thumb" data-key="lebowskis">
-        <div class="thumb-stage"><img src="https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2F7x7g2rVp%2FLebowski-Kool-Luah-Hero-TP.webp&w=1000&q=80&output=webp" alt="Lebowski's Kool Coffee Liqueur" loading="lazy" decoding="async"></div>
-        <span class="cap">Lebowski's Kool Coffee Liqueur</span>
-      </div>
     </div>
     <p style="font-size:11px;color:var(--ink-soft);margin-top:12px;">Product photography supplied by Blackhat Distillery. Click any bottle above &mdash; the whole page updates to that product, showing how one template drives the full catalog.</p>
   </div>
@@ -908,7 +900,7 @@
     <li>No competition entries are shown for any product on this page &mdash; we didn't want to invent awards. Add real results here once available.</li>
     <li>This page reuses your existing catalog product photos and follows the exact same layout, tabs, and interaction pattern as the Duelers PDP &mdash; built to show how one template can drive the full 24-page catalog rollout.</li>
     <li>Per your notes, Tanto is not distilled at Blackhat's facility — it's produced and bottled by Blackhat under its own private-label brand. All "distilled"/"charcoal filtered" claims about Tanto specifically have been removed or corrected throughout this page.</li>
-    <li>Sonny 76th has been removed from this page per your latest revision notes, since it's not part of the ecommerce platform. Galletoo and Lebowski's now also appear here as part of the Private Label line, cross-linked from the Liqueurs and Specialties page, so this is a line switcher page rather than a single-product page.</li>
+    <li>Sonny 76th has been removed from this page per your revision notes, since it's not part of the ecommerce platform. Galletoo and Lebowski's were briefly added here as Private Label products, but per your latest update they've been pulled back off this page and now live only on the Liqueurs and Specialties page, each with a note that it's also part of the Private Label line. The story copy below still name-checks all three (Lebowski's, Galletoo, and Tanto) as part of the private label program &mdash; let us know if you'd like that trimmed to just Tanto for now.</li>
   </ul>
 </div>
 <div class="concept-badge" id="conceptBadge">
@@ -951,64 +943,6 @@ const MEDAL_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#93691f" stroke-
         recipeItems:["2 oz Tanto Vodka","4 oz soda water","Lime wedge, to garnish"],
         noteTitle:"Helping Those That Help Us",
         noteText:"This is an easy choice for your everyday vodka, especially when every bottle sold helps veterans and first responders."
-      }
-    },
-    galletoo: {
-      name:"Galletoo",
-      category:"Coffee Liqueur",
-      badge:"Galletoo \u00b7 Specialty",
-      img:"https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2FYF9WY8Z8%2FGalletoo-Hero-TP.webp&w=1000&q=80&output=webp",
-      abv:"32%", proof:"64", specLabel:"Style", specValue:"Coffee Liqueur",
-      price:"$27.99", sku:"BHTR-GT", upc:"TBD",
-      flavorNotes:["African Coffee","Baking Chocolate","Dark Fruit","Vanilla"],
-      desc:"<b>Silky and full-bodied</b>, a high-end coffee liqueur made with real African coffee beans, with proceeds going to benefit the LALMBA organization.",
-      lineupDesc:"A luxury liqueur with flavors that evoke a traditional Ethiopian coffee ceremony, and a long-lasting dark roasted finish that melds with Madagascar vanilla.",
-      awards:[{tier:"Gold Medal", comp:"San Diego Spirits Festival"}],
-      notes:[
-        {num:"01 \u2014 NOSE", title:"Dark Roast African Coffee", text:"Dark roast African coffee."},
-        {num:"02 \u2014 PALATE", title:"Baking Chocolate & Dark Fruit", text:"Baking chocolate, dark fruit, and bright acidity."},
-        {num:"03 \u2014 FINISH", title:"Smooth Vanilla & Coffee", text:"Smooth vanilla with lingering coffee richness."}
-      ],
-      craftNote:"Galletoo is a luxury liqueur with flavors that evoke a traditional Ethiopian coffee ceremony, and a long-lasting dark roasted finish that melds with Madagascar vanilla.",
-      factOakTitle:"Coffee Liqueur", factOakDesc:"Made with real African coffee beans, with proceeds supporting the LALMBA organization.",
-      fact1Title:"Private Label Partnership", fact1Desc:"Produced and bottled by Blackhat Distillery under a private label brand.",
-      serve:{
-        neatTitle:"Neat or Over Ice",
-        neatText:"Perfect neat or over ice to enjoy the rich coffee flavors.",
-        recipeTitle:"Suggested Serve: Blackhat Espresso Martini",
-        recipeIntro:"A rich, coffee-forward riff on the classic.",
-        recipeItems:["1.5 oz Duelers Midnight","1 oz Galletoo Coffee Liqueur","2 oz espresso","0.5 oz agave nectar","4-5 dashes orange bitters"],
-        noteTitle:"The Star of the Show",
-        noteText:"Whether you mix it into a cocktail or enjoy it on its own, Galletoo is the star of the show."
-      }
-    },
-    lebowskis: {
-      name:"Lebowski's Kool Coffee Liqueur",
-      category:"Coffee Liqueur",
-      badge:"Lebowski's \u00b7 Specialty",
-      img:"https://images.weserv.nl/?url=https%3A%2F%2Fi.ibb.co%2F7x7g2rVp%2FLebowski-Kool-Luah-Hero-TP.webp&w=1000&q=80&output=webp",
-      abv:"20%", proof:"40", specLabel:"Style", specValue:"Coffee Liqueur",
-      price:"$24.99", sku:"BHTR-LK", upc:"TBD",
-      flavorNotes:["Vanilla","Colombian Coffee","Velvety","Smooth"],
-      desc:"<b>Made with premium vodka and the finest Colombian coffee</b>, it delivers a smooth, rich profile with hints of sweetness and a velvety finish.",
-      lineupDesc:"Experience the luxurious allure of Lebowski's Kool Coffee Liqueur, a craft coffee liqueur that blends sophistication with bold flavor.",
-      awards:[],
-      notes:[
-        {num:"01 \u2014 NOSE", title:"Vanilla & Coffee", text:"Vanilla and coffee."},
-        {num:"02 \u2014 PALATE", title:"Colombian Coffee & Vanilla", text:"Colombian coffee richness with a rich sweet vanilla."},
-        {num:"03 \u2014 FINISH", title:"Velvety & Smooth", text:"Velvety and smooth."}
-      ],
-      craftNote:"Made with premium vodka and the finest Colombian coffee for a smooth, rich, velvety profile.",
-      factOakTitle:"Coffee Liqueur", factOakDesc:"Made with premium vodka and the finest Colombian coffee.",
-      fact1Title:"Private Label Partnership", fact1Desc:"Produced and bottled by Blackhat Distillery under a private label brand.",
-      serve:{
-        neatTitle:"Over Ice or in Coffee",
-        neatText:"Great over ice, or added to hot coffee for an easy after-dinner drink.",
-        recipeTitle:"Suggested Serve: Lebowski's White Russian",
-        recipeIntro:"The classic use case for a coffee liqueur.",
-        recipeItems:["2 oz Blackhat Vodka","1 oz Lebowski's Kool Coffee Liqueur","1 oz heavy cream"],
-        noteTitle:"Built to Mix",
-        noteText:"Built to mix; this should be your go-to liqueur for all your favorite coffee cocktails."
       }
     }
   };
@@ -1088,13 +1022,11 @@ function renderAwardRow(container, awards, size, useAgave){
   }
 
   
-  const ORDER = ["tanto","galletoo","lebowskis"];
+  const ORDER = ["tanto"];
   let current = "tanto";
 
   const TONE_FILTER = {
-    tanto: '',
-    galletoo: '',
-    lebowskis: ''
+    tanto: ''
   };
 
   function switchProduct(key){
